@@ -19,17 +19,18 @@ public enum EnvironmentInfo {
 
     // This method reads the package version from the "PackageConfig.json" file in the bundle
     public static var packageVersion: String {
-        guard let configURL = Bundle.resourceBundle.url(forResource: "PackageConfig", withExtension: "json") else {
-            fatalError("Unable to find PackageConfig.json in the resource bundle")
-        }
-
-        do {
-            let jsonData = try Data(contentsOf: configURL)
-            let config = try JSONDecoder().decode(PackageConfig.self, from: jsonData)
-            return config.version
-        } catch {
-            fatalError("Failed to load and decode PackageConfig.json: \(error)")
-        }
+        "1.1.1"
+//        guard let configURL = Bundle.resourceBundle.url(forResource: "PackageConfig", withExtension: "json") else {
+//            fatalError("Unable to find PackageConfig.json in the resource bundle")
+//        }
+//
+//        do {
+//            let jsonData = try Data(contentsOf: configURL)
+//            let config = try JSONDecoder().decode(PackageConfig.self, from: jsonData)
+//            return config.version
+//        } catch {
+//            fatalError("Failed to load and decode PackageConfig.json: \(error)")
+//        }
     }
 
     public static var operatingSystem: String {
